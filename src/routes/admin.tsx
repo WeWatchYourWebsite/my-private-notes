@@ -40,8 +40,8 @@ function AdminPage() {
 
   useEffect(() => {
     if (loading) return;
-    if (!user) return navigate({ to: "/auth" });
-    if (!isAdmin) return navigate({ to: "/dashboard" });
+    if (!user) { navigate({ to: "/auth" }); return; }
+    if (!isAdmin) { navigate({ to: "/dashboard" }); return; }
   }, [loading, user, isAdmin, navigate]);
 
   const load = async () => {
